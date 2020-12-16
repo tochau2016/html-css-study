@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <meta charset="UTF-8">
+  <!--Có thể co dãn website nhằm hỗ trợ hiển thị toàn bộ
+    thông tin cho các độ phân giải khác nhau
+    width: của website là width của thiết bị
+    scale: có thể thấy được toàn bộ nội dung dù trang web co dãn thế nào-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Description để viết ghi thông tin chi tiết dưới đường link
+  Khi học sâu có thể không cần đến nữa-->
+  <meta name="description " content="tui la Chau">
+  <!-- 
+    follow theo dõi và tìm ra các link trong cái webpage của mình
+    index ghi lại thông tin các link đó
+    Giúp người ta tìm kiếm trang web cảu mình dễ hơn trên Google
+  -->
+  <meta name="robots" content="index, follow">
+  <!--Stylesheet để kết nối đến file css-->
+  <link rel="icon" href="/HTML&CSS/ball_glass_xmas_winter_icon_175553.ico">
+  
+  <script>
+    var input
+    input = prompt("Mời bạn nhập điểm: ")
+
+    var diem = parseFloat(input)
+
+    if (diem >= 0 && diem < 4){
+      alert ("Bạn là học sinh yếu")
+    } else if (diem >= 4 && diem < 5.5){
+      alert ("Bạn là học sinh trung bình")
+    } else if (diem >= 5.5 && diem < 7){
+      alert ("Bạn là học sinh khá")
+    } else {
+      alert ("Bạn là học sinh giỏi")
+    }
+    
+  </script>
+
+</head>
+<body>
+  <script>
+    document.writeln("<pre>Điểm bạn nhập: " + diem)
+  </script>
+</body>
+</html>

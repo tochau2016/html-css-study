@@ -1,22 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <title>First Learn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script>
+    var entry = "";
+    var entry = prompt("Nhập chìu dài hình chữ nhật");
+    var score1 = parseFloat(entry);
+
+    var entry = prompt("Nhập chìu rộng hình chữ nhật")
+    var score2 = parseFloat(entry);
+    if (!isNaN(score1) && !isNaN(score2)) {
+        if (score1 >= 0 && score2 >= 0) {
+            var acreage = score1 * score2;
+            acreage = parseInt(acreage);
+            alert("Diện tích là: " + acreage);
+
+            var perimeter = (score1 + score2) * 2;
+            perimeter = parseInt(perimeter);
+            alert("Chu vi là: " + perimeter);
+
+        } else {
+            alert("ban dang nhap so am");
+        }
+
+    } else {
+        alert("Can nhap day du thong tin");
+    }
+</script> -->
+
+<script>
+  var input
+  input = prompt("Mời bạn nhập điểm: ")
+
+  var diem = parseFloat(input)
+  var thanhtich = ""
+  if (diem < 0 || diem > 10){
+    alert("Điểm bạn nhập chưa đúng, vui lòng nhập lại!")
+  } else if (diem >= 0 && diem < 4){
+    thanhtich = "Rớt"
+    alert ("Bạn đạt điểm F")
+  } else if (diem >= 4 && diem < 5.5){
+    thanhtich = "Yếu"
+    alert ("Bạn đạt điểm D")
+  } else if (diem >= 5.5 && diem < 7){
+    thanhtich = "Trung bình"
+    alert ("Bạn đạt điểm C")
+  } else if (diem >= 7 && diem < 8.5){
+    thanhtich = "Khá" 
+    alert ("Bạn đạt điểm B")
+  } else {
+    thanhtich = "Giỏi"
+    alert ("Bạn đạt điểm A")
+  }
+  
+</script>
+
 </head>
 <body>
-    <h1>Hello</h1>
-    <div class = "container p-3 my-3 border bg-dark text-white">
-        <h1>Dạo này buồn quá :(</h1>
-        <p>Ước gì sau một đêm mình có thể được thoát khỏi thế gian này</p>
-    </div>
-    <div class="container-xl">
-        Hello
-    </div>
+  <script>
+    // document.writeln("<h1>ABC</h1>");
+    // document.writeln("<pre>Chieu dai la: " + score1);
+    // document.writeln("Chieu rong la: " + score2);
+    // document.writeln("Chu vi la: " + perimeter);
+    // document.writeln("Dien tich la: " + acreage + "</pre>");
+  
+    document.writeln("<h1>Kết quả</h1>")
+    document.writeln("<pre>Điểm bạn nhập: " + diem)
+    document.writeln("Thành tích của bạn: " + thanhtich)
+  </script>
 </body>
 </html>
