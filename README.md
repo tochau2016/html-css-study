@@ -1,8 +1,8 @@
 # html-css-study
 Reinstall new life
 
-git init \n
-git add . \n
-git commit -m 'First Commit' \n
-git remote add origin "link repo" \n
+git init    
+git add .    
+git commit -m 'First Commit'    
+git remote add origin "link repo"    
 git push -u -f origin master 
