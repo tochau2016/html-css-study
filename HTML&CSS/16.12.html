@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script>
+    var entry = "";
+    var entry = prompt("Nhập chìu dài hình chữ nhật");
+    var score1 = parseFloat(entry);
+
+    var entry = prompt("Nhập chìu rộng hình chữ nhật")
+    var score2 = parseFloat(entry);
+    if (!isNaN(score1) && !isNaN(score2)) {
+        if (score1 >= 0 && score2 >= 0) {
+            var acreage = score1 * score2;
+            acreage = parseInt(acreage);
+            alert("Diện tích là: " + acreage);
+
+            var perimeter = (score1 + score2) * 2;
+            perimeter = parseInt(perimeter);
+            alert("Chu vi là: " + perimeter);
+
+        } else {
+            alert("ban dang nhap so am");
+        }
+
+    } else {
+        alert("Can nhap day du thong tin");
+    }
+</script> -->
+
+<script>
+//   var input
+//   var again = "y"
+//   while(again == "y"){
+//   input = prompt("Mời bạn nhập điểm: ")
+
+//   var diem = parseFloat(input)
+//   var thanhtich = ""
+//   if (diem < 0 || diem > 10){
+//     alert("Điểm bạn nhập chưa đúng, vui lòng nhập lại!")
+//   } else if (diem >= 0 && diem < 4){
+//     thanhtich = "Rớt"
+//     alert ("Bạn đạt điểm F")
+//   } else if (diem >= 4 && diem < 5.5){
+//     thanhtich = "Yếu"
+//     alert ("Bạn đạt điểm D")
+//   } else if (diem >= 5.5 && diem < 7){
+//     thanhtich = "Trung bình"
+//     alert ("Bạn đạt điểm C")
+//   } else if (diem >= 7 && diem < 8.5){
+//     thanhtich = "Khá" 
+//     alert ("Bạn đạt điểm B")
+//   } else {
+//     thanhtich = "Giỏi"
+//     alert ("Bạn đạt điểm A")
+//   }
+//   again = prompt("Lại hông?")
+// }
+
+var arrList = []
+console.log("🚀 ~ file: index.html ~ line 63 ~ arrList", arrList)
+
+// arrList = [12,23,34,"Chau",45,56]
+// console.log("🚀 ~ file: index.html ~ line 65 ~ arrList", arrList)
+// var lengthh = arrList.length
+// console.log("🚀 ~ file: index.html ~ line 67 ~ lengthh", lengthh)
+// // console.log(arrList)
+
+// for (var index = 0; index < arrList.length; index++){
+//   console.log("🚀 ~ file: index.html ~ line 65 ~ arrList", arrList[index])
+// }
+
+  for (var index = 0; index < 5; index++){
+    if (index == 0) {
+      arrList[index] = 5;
+    } else {
+      arrList[index] = arrList[index-1] + 5
+    }
+    //console.log("🚀 ~ file: index.html ~ line 79 ~ arrList[index]", arrList[index])
+    
+  }
+  //console.log(arrList)
+  
+</script>
+
+</head>
+<body>
+  <script>
+    // document.writeln("<h1>ABC</h1>");
+    // document.writeln("<pre>Chieu dai la: " + score1);
+    // document.writeln("Chieu rong la: " + score2);
+    // document.writeln("Chu vi la: " + perimeter);
+    // document.writeln("Dien tich la: " + acreage + "</pre>");
+  
+    // document.writeln("<h1>Kết quả</h1>")
+    // document.writeln("<pre>Điểm bạn nhập: " + diem)
+    // document.writeln("Thành tích của bạn: " + thanhtich)
+  </script>
+</body>
+</html>

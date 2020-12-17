@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    var entry
+    var average
+    var scores =[]
+    var total = 0
+    var show = "The test scores: \n"
+
+    do {
+      entry = prompt("Enter test score\n" + "Or enter 999 to end entries", 999)
+      entry = parseInt(entry)
+      if (entry >= 0 && entry <= 100){
+        scores[scores.length] = entry;
+      } else if (entry != 999){
+        alert("Entry must by a valid number from 0 through 100\n" + "Or enter 999 to end entries");
+      }
+    } while (entry != 999)
+
+    for (var i = 0; i < scores.length; i++){
+      total = total + scores[i]
+      show = show + scores[i] + "\n"
+    }
+    
+    average = parseInt(total/scores.length);
+    alert(total + " " + show + "\nAverage score is " + average);
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>
