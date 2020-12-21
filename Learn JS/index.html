@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <!-- <script> 
+        // var nameValue = document.getElementById("name");
+        // console.log("🚀 ~ file: index.html ~ line 12 ~ nameValue", nameValue.value);
+        // nameValue.focus();
+        // // console.log(nameValue.value)
+
+        // var today = new Date();
+        // console.log(today)
+
+        // var todayStr = today.toDateString();
+        // console.log(todayStr)
+
+        // var year = today.getFullYear();
+        // console.log("today: " + todayStr + " year: " + year)
+
+        // // var time = today.getMonth();
+        // // console.log(time)
+
+        // var name = "Chau";
+        // console.log(name.substr(1, 2))
+
+        // var entry = "";
+        // var entry = prompt("Nhập chìu dài hình chữ nhật");
+        // var score1 = parseFloat(entry);
+
+        // var entry = prompt("Nhập chìu rộng hình chữ nhật")
+        // var score2 = parseFloat(entry);
+        // if (!isNaN(score1) && !isNaN(score2)) {
+        //     if (score1 >= 0 && score2 >= 0) {
+        //         var acreage = score1 * score2;
+        //         acreage = parseInt(acreage);
+        //         alert("Diện tích là: " + acreage);
+
+        //         var perimeter = (score1 + score2) * 2;
+        //         perimeter = parseInt(perimeter);
+        //         alert("Chu vi là: " + perimeter);
+
+        //     } else {
+        //         alert("ban dang nhap so am");
+        //     }
+
+        // } else {
+        //     alert("Can nhap day du thong tin");
+        // }
+
+        
+        // function tinhChuVi(d, r){
+
+            
+        //     var chuVi = (parseFloat(d) + parseFloat(r)) * 2;
+        //     var dienTich = parseFloat(d) * parseFloat(r);
+        //     return chuVi;
+        //     return dienTich;
+        // }
+        // alert("Chu vi la: " + chuVi(d, r));
+
+        // console.log(tinhChuVi(20, 5));
+        // var b = tinhChuVi(1,2);
+        // console.log(b);
+
+        // function tinh(){
+        //     var a = parseFloat(prompt("Nhap vao chieu dai: "));
+        //     var b = parseFloat(prompt("Nhap vao chieu rong: "));
+        //     var c = prompt("Ban muon tinh gi?" + "\n" + "Chu vi: cv " + "Dien tich: dt");
+
+        //     var chuVi = (a + b) * 2;
+        //     var dienTich = a * b;
+
+        //     if (c == "cv"){
+        //         alert(chuVi)
+        //         console.log("🚀 ~ file: index.html ~ line 81 ~ tinh ~ chuVi", chuVi)
+        //     } else if (c == "dt"){
+        //         alert(dienTich)
+        //         console.log("🚀 ~ file: index.html ~ line 84 ~ tinh ~ dienTich", dienTich)
+        //     } else {
+        //         alert("Ban vui long nhap dung ky tu!")
+        //     } 
+        // }
+
+        // tinh();
+            var showAlert = function(){
+                alert('Clicked');
+            }
+
+            var btnElement = document.getElementById('btn');
+            btnElement.onclick = showAlert;
+
+     </script>-->
+
+</head>
+
+<body>
+    <input type="text" id="name" value="ABC" />
+
+
+    <button id="btn">Click Here</button>
+<script>
+    var showAlert = function(){
+        var nameValue = document.getElementById("name").value;
+        alert("Your name: " + nameValue);
+    }
+
+    var changeValue = function(){
+        var nameElement = document.getElementById("name").value;
+        console.log(nameElement);
+    }
+
+    var btnElement = document.getElementById('btn');
+    btnElement.onclick = showAlert;
+    // var show = document.getElementById('btn');
+    btnElement.onclick = changeValue;
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Dai: </p>
+    <input type="text" name="" id="dai">
+    <p>Rong: </p>
+    <input type="text" name="" id="rong">
+    <p>Dien Tich: </p>
+    <input type="text" name="" id="dienTich">
+    <p>Chu Vi: </p>
+    <input type="text" id="chuVi">
+
+    <button id="btn">Tinh ket qua</button>
+
+    <script>
+        var $ = function(id){
+            return document.getElementById(id);
+        }
+
+        function tinhDienTich(){
+            var daiValue = parseFloat($('dai').value);
+            var rongValue = parseFloat($('rong').value);
+
+            // return daiValue * rongValue;
+            var dienTichElement = $('dienTich');
+            var chuViElement = $('chuVi');
+            if (!isNaN(daiValue) && !isNaN(rongValue)){
+                dienTichElement.value = daiValue * rongValue;
+                chuViElement.value = (daiValue + rongValue) * 2;
+            } else {
+                alert("Ban can nhap day du thong tin");
+            }
+
+        }
+
+        var btnElement = $('btn');
+        btnElement.onclick = tinhDienTich;
+    </script>
+
+</body>
+</html>

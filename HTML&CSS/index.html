@@ -5,37 +5,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        var average
-        var input
-        var arrNumber = []
-        var total = 0
-        var show = "Các số bạn vừa nhập là: \n"
-
-        while (input != 999) {
-            input = prompt("Hãy nhập các số lớn hơn 0 và nhỏ hơn hoặc bằng 100 \n"
-                + "Hoặc nhập 999 để dừng nhập", 999)
-            input = parseInt(input)
-
-            if (input >= 1 && input <= 100) {
-                arrNumber[arrNumber.length] = input
-            } else if (input != 999) {
-                alert("Vui lòng nhập số hợp lệ \n" + "Hoặc nhập 999 để kết thúc")
-            }
-        }
-        
-        for (var i = 0; i < arrNumber.length; i++) {
-            total += arrNumber[i]
-            show += arrNumber[i] + "\n"
-        }
-
-        average = parseInt(total / arrNumber.length)
-        alert(show + "Trung bình các số bạn đã nhập là: " + average)
-    </script>
+    <meta http-equiv="pragma" content="no-cache" />
 </head>
 
 <body>
-    <h1>Welcome to new page</h1>
+
+
+
+    <header>
+        <h1>Logos</h1>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Contact</li>
+                <li>Porjects</li>
+                <li>Sign Up</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>This is me</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Neque eveniet tempore quidem, ex velit nostrum nisi suscipit impedit
+            inventore amet officia qui natus fugit esse dolorum dolore deserunt quas consequatur.</p>
+
+        <section class="gallery">
+            <h2>These are my images</h2>
+            <div class="black"></div>
+            <img src="" alt="">
+            <img src="" alt="">
+            </div>
+            <div class="red">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+        </section>
+        
+        <form action="">
+            <h1>Hello</h1>
+            <img width="400" height="200" src="/HTML&CSS/img/image.png" alt="">
+        </form>
+
+
+
+        <table border="1" width="500">
+            <tbody>
+                <!--(Table Row) <tr> Hiển thị cột trong bảng </tr>-->
+                <tr>
+                    <!--(Table Heading (th)) Giống td tag nhưng th biểu thị tiêu đề của bảng
+                        Vẫn cần phải sử dụng th tag dù cột đó không có dữ liệu-->
+                    <td colspan="3">First Name</td>
+                    <td>Last Name</td>
+                    <td>Age</td>
+                </tr>
+                <tr>
+                    <!--(Table Data (td)) thể hiện dữ liệu trong bảng-->
+                    <td>Nguyen</td>
+                    <td>Chau</td>
+                    <td>21</td>
+                </tr>
+            </tbody>
+        </table>
+        <del>This code must delete</del>
+        <p><s>Del this line</s></p>
+
+
+        <h1 id="logo">Logo</h1>
+        <h2>Huhu Buon qua</h2>
+        <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe,
+            earum nobis ipsum minus sequi perspiciatis
+            sed quod id possimus doloremque delectus
+            architecto dolore eum optio consequatur nesciunt ipsa ex quam?</p>
+
+        <h2>Paragraph 2</h2>
+        <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe,
+            earum nobis ipsum minus sequi perspiciatis
+            sed quod id possimus doloremque delectus
+            architecto dolore eum optio consequatur nesciunt ipsa ex quam?</p>
+
+        <h2>Paragraph 3</h2>
+        <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe,
+            earum nobis ipsum minus sequi perspiciatis
+            sed quod id possimus doloremque delectus
+            architecto dolore eum optio consequatur nesciunt ipsa ex quam?</p>
+
+        <section>
+            <h2>Here is my image gallery</h2>
+            <figure>
+                <img width="400" height="200" src="/HTML&CSS/img/image.png" alt="Zoro">
+                <figcaption>Capture pic</figcaption>
+
+                <video controls width="400" height="200">
+                    <source src="/HTML&CSS/img/For Badday.mp4" type="video/mp4">
+                </video>
+                <figcaption>Cat video</figcaption>
+            </figure>
+        </section>
+        <article>
+            <h2>Learn new things :(</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eaque obcaecati facere pariatur minus deserunt harum ipsum nostrum?
+                Quam voluptate, inventore corporis explicabo veniam, illum voluptates,
+                alias velit magnam ipsam facere.</p>
+
+
+        </article>
+    </main>
+    <footer>
+        <p>Created 2020</p>
+        <ul>
+            <li><a href="https://google.com" target="_blank">Google</a></li>
+        </ul>
+    </footer>
 </body>
 
 </html>

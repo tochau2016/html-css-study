@@ -1,0 +1,51 @@
+
+*{
+    font-size: 20px;
+    font-family: 'calibri';
+}
+/* h1 {
+    color:forestgreen;
+}
+
+.first-title {
+    color: green;
+}
+
+p {
+    color: darkviolet;
+    font-size: 20px;
+}
+
+#youtube-link {
+    color: red;
+}
+
+.main-title p {
+    color: purple;
+}
+.random .main-title h1 {
+    color: orange;
+}
+.main-title h2 {
+    color: orangered;
+}
+
+.random h1 {
+    color: blue
+}
+
+.nav-link li {
+    color: darkred;
+}
+
+.nav-link li a {
+    color: red
+}
+
+.my-list + ul {
+    list-style: none;
+} */
+
+.links :nth-child(3){
+    color: green;
+}

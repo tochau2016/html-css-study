@@ -1,0 +1,28 @@
+.header {
+    color: rgb(237, 237, 9)
+}
+/* #head {
+    color: seagreen;
+} */
+h1.active {
+    color: purple;
+}
+
+h1 {
+    margin: 20px;
+    color: coral;
+    background-color: crimson;
+    text-align: center;
+}
+
+h1 {
+    color: violet ;
+}
+
+.active {
+    color: red; 
+}
+
+button {
+    margin: 50px;
+}
