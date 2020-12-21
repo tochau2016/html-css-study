@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Nhập chiều dài: </label><br>
+        <input type="text" id="dai"><br>
+        <label for="">Nhập chiều rộng: </label><br>
+        <input type="text" id="rong"><br>
+        <label for="">Diện tích là: </label><br>
+        <input type="text" id="dt"><br>
+        <label for="">Chu vi là: </label><br>
+        <input type="text" id="cv"><br>
+        <button id="btn">Tính</button>
+
+    <script>
+        var $ = function(id){
+            return document.getElementById(id);
+        }
+        function tinhDienTich(){
+            var chieudai = parseFloat($('dai').value);
+            var chieurong = parseFloat($('rong').value);
+            $('dt').value = chieudai*chieurong;
+        }
+        function tinhChuVi(){
+            var chieudai = parseFloat($('dai').value);
+            var chieurong = parseFloat($('rong').value);
+            $('cv').value= (chieudai+chieurong)*2
+        }
+        function display(){
+            tinhDienTich();
+            tinhChuVi();
+        }
+        
+        var btnElement = $("btn");
+        $("btn").onclick = display;
+    </script>
+</body>
+</html>
