@@ -1,10 +1,10 @@
-.header {
+/* .header {
     color: rgb(237, 237, 9)
 }
 /* #head {
     color: seagreen;
 } */
-h1.active {
+/* h1.active {
     color: purple;
 }
 
@@ -25,4 +25,50 @@ h1 {
 
 button {
     margin: 50px;
+}  */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+* {box-sizing: border-box;}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: v;
+}
+
+label {
+    color: rgb(121, 35, 35);
+}
+span {
+    font-weight: bold;
+    color: red;
+}
+input[type=button]{
+    text-align: center;
+    marg;
+    background-color: lightgreen;
+    color: black;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type = button]:hover {
+    background-color: green;
 }
