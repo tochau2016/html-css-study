@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body, p, h1, h2, h3 ,h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.register-bg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./register-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.register-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  width: 500px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}

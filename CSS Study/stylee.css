@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5px;
+}
+
+html, body{
+    height: 200%;
+}
+
+.container {
+    background: cadetblue;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.box1,.box2,.box3{
+    width: 20%;
+    height: 10%;
+    background: red;
+}
+.box2{
+    background: greenyellow;
+    position: relative;
+    left: 1rem;
+    
+}
+.box3 {
+    background: green;
+    position: sticky;
+    top: 0%;
+
+}
+.box1 {
+    background: purple;
+    position: absolute;
+    bottom: 0%;
+
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="n1" id="n1" name="n1">Số Thứ Nhất: </label>
+    <input type="number" name="number1" id="number1">
+    <div class="text-danger"></div>
+    <label for="n2" id="n2" name="n2">Số Thứ Hai: </label>
+    <input type="number" name="number2" id="number2">
+    <div class="text-danver"></div>
+    <button id="submit">Random!</button>
+    <div id="result"></div>
+
+
+    <script>
+
+        function getRandom() {
+            var n1;
+            var n2;
+            var isValid = true;
+
+            var number1 = document.getElementById("number1");
+            if (!parseFloat(number1.value)) {
+                number1.nextElementSibling.innerHTML = "Vui lòng nhập số để có thể random!";
+                isValid = false;
+            } else {
+                // n1 = number1.value;
+                number1.nextElementSibling.innerHTML = "";
+            }
+
+            var number2 = document.getElementById("number2");
+            if (!parseFloat(number2.value)) {
+                number2.nextElementSibling.innerHTML = "Vui lòng nhập số để có thể random!";
+                isValid = false;
+            } else {
+                // n2 = number2.value;
+                number2.nextElementSibling.innerHTML = "";
+            }
+
+            var resultElement = document.createElement('div');
+            document.getElementById("result").innerHTML = '';
+            if (parseFloat(number1.value) > parseFloat(number2.value)) {
+                resultElement.innerHTML = "Số thứ nhất phải nhỏ hơn số thứ 2";
+            } else if (isNaN(parseFloat(number1.value))) {
+                resultElement.innerHTML = "Có ô bạn chưa điền kìa!";
+            } else if (isNaN(parseFloat(number2.value))) {
+                resultElement.innerHTML = "Có ô bạn chưa điền kìa!";
+            } else {
+                resultElement.innerHTML = Math.floor(Math.random() * (parseFloat(number2.value) - parseFloat(number1.value) + 1) + parseFloat(number1.value));
+            }
+            document.getElementById("result").appendChild(resultElement);
+        }
+
+
+        var buttonSubmit = document.getElementById("submit");
+        buttonSubmit.onclick = getRandom;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="name" id="name" />
+    <span id="error">*</span>
+    <input type="button" id="btn1" value="HIDE">
+    <input type="button" id="btn2" value="SUBMIT">
+    <button>Submit</button>
+    <button>Disable</button>
+
+    <script>
+        // function disableInput(){
+        //     var inputElement = document.getElementById("name");
+        //     inputElement.disabled = !inputElement.disabled;
+        // }
+
+        // var buttonElement = document.getElementsByTagName("button");
+        // buttonElement[0].onclick = disableInput;
+        // buttonElement[1].onclick = disableInput;
+
+        // function disableInput() {
+        //     var inputElement = document.getElementById("name")
+        //     inputElement.disabled = !inputElement.disabled;
+        // }
+
+        // function submitInput() {
+        //     var inputElement = document.getElementById("name");
+        //     if (inputElement.value && inputElement.value != "") {
+        //         inputElement.nextElementSibling.firstChild.nodeValue = "*";
+        //         alert("Data: " + inputElement.value);
+        //     } else {
+        //         inputElement.nextElementSibling.firstChild.nodeValue = "Chua nhap du lieu!";
+        //     }
+        // }
+
+        // var buttonElement = document.getElementsByTagName("button")
+        // buttonElement[0].onclick = submitInput;
+        // buttonElement[1].onclick = disableInput;
+
+        // function $(id) {
+        //     return document.getElementById(id);
+        // }
+        // $("btn1").onclick = function () {
+        //     var ele = $("name");
+        //     if ($("btn1").value == "HIDE") {
+        //         ele.type = "password"
+        //         $("btn1").value = "APPEAR"
+        //     } else if ($("btn1").value == "APPEAR") {
+        //         ele.type = "text";
+        //         $("btn1").value = "HIDE"
+        //     }
+
+        // }
+
+
+      function $(id){
+          return document.getElementById("id");
+      }
+      var check = function(){
+        var email = $("email");
+       if(email.value.length == 0){
+        email.nextElementSibling.firstChild.nodeValue = "Nhập đê";
+      }
+    }
+        var submitButton = $('submit');
+        submitButton.onclick = check;
+
+    </script>
+</body>
+
+</html>

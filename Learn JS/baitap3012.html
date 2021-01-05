@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Everyone</h1>
+    <script>
+        var arr = [3, 5, 7, 1, 2];
+
+        var text = "";
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+            text = text + arr[i] + " ";
+        }
+
+        console.log(text)
+
+        var text2 = "";
+        arr.forEach(function (item, index) {
+            text2 = text2 + item + " ";
+        })
+        console.log(text2);
+
+        var arr2 = [];
+        arr.forEach(function (item, index) {
+            arr2.push(item * 2);
+        })
+
+        var arrx2 = arr.map(function(item, index){
+            return item * 2;
+        })
+
+        var JSONarr = JSON.stringify(arr);
+        console.log(JSONarr)
+        console.log(arrx2);
+
+
+        // localStorage.setItem("arr", JSONarr)
+        localStorage.clear();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="type">Kiểu thành viên: </label>
+  <select name="type" id="type">
+      <option value=""></option>
+    <option value="gold">Vàng</option>
+    <option value="silver">Bạc</option>
+    <option value="bronze">Đồng</option>
+  </select>
+  <div class="text-danger"></div>
+  <div>
+    <label for="money">Tiền: </label>
+    <input type="text" name="money" id="money">
+    <div class="text-danger"></div>
+  </div>
+  <br/>
+  <button id="submit">Submit</button>
+  <br/>
+  <div>
+    <label for="percent">Phần trăm giảm: </label>
+    <input type="text" name="percent" id="percent">
+  </div>
+  <div>
+    <label for="total">Tổng: </label>
+    <input type="text" name="total" id="total">
+  </div>
+
+  <script>
+    var calculator = function() {
+      var typeElement = document.getElementById('type');
+      var moneyElement = document.getElementById('money');
+      var percentElement = document.getElementById('percent');
+      var totalElement = document.getElementById('total');
+
+      var moneyValue = parseFloat(moneyElement.value);
+
+      if (!isNaN(moneyValue)) {
+        switch(typeElement.value) {
+          case "gold": {
+            if (moneyValue >= 200000) {
+              percentElement.value = '20%';
+              totalElement.value = parseInt(moneyValue * 0.8).toLocaleString();
+            } else if (moneyValue < 200000 && moneyValue >= 100000) {
+              percentElement.value = '15%';
+              totalElement.value = parseInt(moneyValue * 0.85).toLocaleString();
+            } else {
+              percentElement.value = '10%';
+              totalElement.value = parseInt(moneyValue * 0.9).toLocaleString();
+            }
+            break;
+          }
+          case "silver": {
+            if (moneyValue >= 100000) {
+              percentElement.value = '15%';
+              totalElement.value = parseInt(moneyValue * 0.85).toLocaleString();
+            } else {
+              percentElement.value = '10%';
+              totalElement.value = parseInt(moneyValue * 0.9).toLocaleString();
+            }
+            break;
+          }
+          case "bronze": {
+            if (moneyValue >= 100000) {
+              percentElement.value = '10%';
+              totalElement.value = parseInt(moneyValue * 0.9).toLocaleString();
+            }
+            break;
+          }
+          default: {
+            typeElement.nextElementSibling.innerHTML = "Bạn cần chọn kiểu thành viên";
+            break;
+          }
+        }
+      } else {
+        moneyElement.nextElementSibling.innerHTML = "Bạn cần nhập số tiền";
+      }
+    }
+
+    var submitElement = document.getElementById("submit");
+    submitElement.onclick = calculator;
+  </script>
+</body>
+</html>

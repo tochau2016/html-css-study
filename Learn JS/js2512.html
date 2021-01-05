@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Tên sự kiện: </label>
+    <input type="text" name="name" id="eventName">
+    <div class="text-danger"> </div>
+    <label for="time">Ngày sự kiện: </label>
+    <input type="date" name="date" id="date">
+    <div class="text-danger"> </div>
+    <button id="btn">Bắt đầu đếm!</button>
+
+    <script src="/Learn JS/app.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown</title>
+</head>
+<body>
+  <label for="name">Tên sự kiện: </label>
+  <input type="text" name="name" id="name" />
+  <div class="text-dange"></div>
+  <label for="date">Ngày sự kiện: </label>
+  <input type="date" name="date" id="date" />
+  <div class="text-dange"></div>
+  <button id="submit">Submit</button>
+  <div id="result"></div>
+
+  <script>
+    function getCountdown() {
+      var isValid = true;
+      var eventName;
+      var eventDate;
+      var countdown;
+      var nameElement = document.getElementById("name");
+      if (nameElement.value.length === 0) {
+        nameElement.nextElementSibling.innerHTML = "Bạn cần nhập tên sự kiện";
+        isValid = false;
+      } else {
+        eventName = nameElement.value;
+      }
+
+      var dateElement = document.getElementById("date");
+      if (!dateElement.value) {
+        dateElement.nextElementSibling.innerHTML = "Bạn cần chọn ngày sự kiện";
+        isValid = false;
+      } else {
+        var now = new Date();
+        var dateSelected = new Date(dateElement.value);
+
+        var nowTime = now.getTime();
+        var dateSelectedTime = dateSelected.getTime();
+
+        var oneDate = 24 * 60 * 60 * 1000;
+
+        var countdownTime = Math.ceil((dateSelectedTime - nowTime) / oneDate);
+        
+        var resultElement = document.createElement('div');
+        document.getElementById("result").innerHTML = '';
+        if (countdownTime === 0) {
+          resultElement.innerHTML = 'Chính là hôm nay !';
+        } else if (countdownTime > 0) {
+          resultElement.innerHTML = 'Sự kiện ' + eventName + ' còn ' + countdownTime + ' ngày nữa ';
+        } else {
+          resultElement.innerHTML = 'Bạn đã bỏ lỡ mất '+ -countdownTime + ' ngày rồi !';
+        }
+        document.getElementById("result").appendChild(resultElement);
+      }
+    }
+
+    var buttonSubmit = document.getElementById("submit");
+    buttonSubmit.onclick = getCountdown;
+  </script>
+</body>
+</html>

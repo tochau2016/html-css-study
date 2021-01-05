@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Invoice Total Calculator</h1>
+    <label for="stt">Customer Type:</label>
+    <select name="typectm" id="typectm">
+        <option value=""></option>
+        <option value="gold">Vàng</option>
+        <option value="silver">Bạc</option>
+        <option value="bronze">Đồng</option>
+    </select>
+    <div class="text-danger"></div>
+    <label for="total">Tồng tiền mua: </label>
+    <input type="number" name="totalcash" id="totalCash" style="color:aliceblue">
+    <div class="text-danger"></div>
+    <label for="percentText" id="percentText">Phần trăm được giảm: </label>
+    <input type="text" name="percent" id="percent" disabled>
+    <label for="reCash" id="reCash">Số tiền sau khi giảm: </label>
+    <input type="text" name="cashDiscount" id="cashDiscount" disabled>
+    <button onclick="calculator()">Calculate</button>
+
+    <script>
+
+        function getCalculate() {
+            var isValid = true;
+
+            var cash = document.getElementById("totalCash");
+            if (!parseFloat(cash.value)) {
+                cash.nextElementSibling.innerHTML = "Vui lòng nhập số tiền!";
+                isValid = false;
+            } else {
+                cash.nextElementSibling.innerHTML = "";
+            }
+
+        }
+
+        var calculator = function () {
+            var type = document.getElementById("typectm");
+            var cash = document.getElementById("totalCash");
+            var percentDiscount;
+            var percent = document.getElementById("percent");
+            var cashDiscount = document.getElementById("cashDiscount");
+
+
+            if (!isNaN(parseInt(cash.value))) {
+                cash.nextElementSibling.innerHTML = ""
+                type.nextElementSibling.innerHTML = ""
+                switch (type.value) {
+                    case "gold": {
+                        if (cash.value > 200000) {
+                            percent.value = "20%";
+                            cashDiscount.value = (cash.value - (cash.value * 20 / 100)).toLocaleString();
+                        } else if (cash.value >= 100000 && cash.value <= 200000) {
+                            percent.value = "15%";
+                            cashDiscount.value = (cash.value - (cash.value * 15 / 100)).toLocaleString();
+                        } else {
+                            percent.value = "10%";
+                            cashDiscount.value = (cash.value - (cash.value * 10 / 100)).toLocaleString();
+                        }
+                        break;
+                    } case "silver": {
+                        if (cash.value > 100000) {
+                            percent.value = "10%";
+                            cashDiscount.value = (cash.value - (cash.value * 10 / 100)).toLocaleString();
+                        } else {
+                            percent.value = "5%";
+                            cashDiscount.value = (cash.value - (cash.value * 5 / 100)).toLocaleString();
+                        }
+                        break;
+                    } case "bronze": {
+                        if (cash.value > 100000) {
+                            percent.value = "10%";
+                            cashDiscount.value = (cash.value - (cash.value * 10 * 100)).toLocaleString();
+                        }
+                        break;
+                    }
+                    default: {
+                        type.nextElementSibling.innerHTML = "Bạn cần chọn kiểu thành viên";
+                        break;
+                    }
+                }
+
+            } else {
+                cash.nextElementSibling.innerHTML = "Ban can nhap so tien! "
+            }
+        }
+
+    </script>
+</body>
+
+</html>

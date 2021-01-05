@@ -1,0 +1,3 @@
+note 
+X && A (Nếu X true thì lấy A)
+X || A (Nếu X null hoặc false thì sẽ lấy A)
