@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <input type="text" class="text" name="" id="name">
+    <div class="text-danger"></div>
+    <button onclick="addTask()">Add Task</button>
+    <div id="list"></div>
+    <!-- <button onclick="clearTask()">Delete</button> -->
+    <script>
+        // var toDoList = [];
+
+        var toDoList = {
+            list: [],
+            getLocal: function () {
+                this.list = JSON.parse(localStorage.getItem("toDoList")) || [];
+                return this;
+            },
+            setLocal: function () {
+                localStorage.setItem("toDoList", JSON.stringify(this.list));
+                return this;
+            },
+            render: function () {
+                var listHtml = "";
+                this.list.forEach(function (item, index) {
+                    listHtml = listHtml + "<p><a href='#' onclick='deleteTask(" + index + ")'" + index + "'>Xóa</a> " + item + "</p>";
+                });
+                const listElement = document.getElementById("list");
+                listElement.innerHTML = listHtml;
+                return this;
+            },
+            add: function () {
+                const nameElement = document.getElementById("name");
+                if (nameElement.value.length > 0) {
+                    this.list.push(nameElement.value);
+                    this.setLocal().render();
+                    nameElement.value = "";
+                }
+                return this;
+            },
+
+            delete: function (index) {
+                this.list.splice(index, 1);
+                this.render();
+            }
+        };
+
+
+
+        toDoList.getLocal().render();
+
+        function addTask() {
+            toDoList.add();
+        }
+
+        function deleteTask(index) {
+            toDoList.delete(index)
+        }
+
+        // toDoList.delete();
+        // function removeTask(index){
+        //     toDoList.delete();
+        // }
+        // renderToDoList();
+        // function renderToDoList() {
+        //     // var listHtml = "";
+        //     // toDoList = JSON.parse(localStorage.getItem("toDoList"));
+        //     // toDoList.forEach(function (item, index) {
+        //     //     listHtml = listHtml + "<div>" + item + "<a href='#' onclick='removeTask(" + index + ")'> xóa</a></div>";
+        //         //  '<div>$(item) <a href='#' onclick='removeTask($(index))'>Xóa</a></div>''
+        //     });
+        //     document.getElementById("list").innerHTML = listHtml;
+        // }
+
+        // function addTask() {
+        //     var nameElement = document.getElementById("name");
+        //     console.log("abc")
+        //     if (nameElement.value.length > 0) {
+        //         toDoList.unshift(nameElement.value);
+        //         localStorage.setItem("toDoList", JSON.stringify(toDoList));
+        //         renderToDoList();
+        //         nameElement.value = "";
+        //         nameElement.nextElementSibling.innerHTML = ""
+        //     } else {
+        //         nameElement.nextElementSibling.innerHTML = "Ban can nhap ten task"
+        //     }
+        // }
+
+        // function removeTask(index) {
+        //     toDoList = JSON.parse(localStorage.getItem("toDoList"));
+        //     toDoList.splice(index, 1);
+        //     localStorage.setItem("toDoList", JSON.stringify(toDoList));
+        //     renderToDoList();
+        // }
+        // function clearTask() {
+        //     toDoList.length = 0;
+        //     localStorage.setItem("toDoList", JSON.stringify(toDoList));
+        //     renderToDoList();
+        // }
+
+
+    </script>
+</body>
+
+</html>

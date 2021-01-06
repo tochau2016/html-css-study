@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <input type="text" class="text" name="" id="name">
+    <div class="text-danger"></div>
+    <button onclick="addTask()">Add Task</button>
+    <div id="list"></div>
+
+    <script>
+        var toDoList = {
+            list: [],
+
+            render: function () {
+                var listHtml = "";
+                this.list.forEach(function (item, index) {
+                    listHtml = listHtml + "<p><a href='#' onclick='deleteTask(" + index + ")'" + index + "'>Xóa</a> " + item + "</p>";
+                });
+                const listElement = document.getElementById("list");
+                listElement.innerHTML = listHtml;
+                // return this;
+            },
+            add: function () {
+                const nameElement = document.getElementById("name");
+                if (nameElement.value.length > 0) {
+                    this.list.push(nameElement.value);
+                    // this.setLocal().render();
+                    nameElement.value = "";
+                }
+                // return this;
+            },
+        }
+
+        toDoList.render();
+
+        function addTask(){
+            toDoList.add();
+        }
+    </script>
+</body>
+
+</html>

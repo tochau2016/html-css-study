@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { 
+    font-size: 62.5%;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+h2{
+    font-size: 3.6rem;
+    padding: 5rem;
+}
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+button {
+    font-size: 1.8rem;
+}
+
+nav {
+    background: rgb(5, 139, 184);
+    color: white;
+    padding: 2rem;
+}
+
+nav h1 {
+    float: left;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+}
+
+nav li {
+    float: left;
+    margin: 0rem 4rem;
+}
+
+.hero-section {
+    background-image: url("/CSSStudy/photos/pexels-pixabay-262140\ \(1\).jpg");
+    height: 30rem;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    padding-top: 2rem;
+    text-shadow: 3px 3px 3px black;
+}
+
+.hero-section button {
+    margin-top: 4rem;
+    padding: 1rem 4rem;
+    background: rgb(182, 54, 54);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.form-section {
+    text-align: center;
+}
+
+form {
+}
+form input,
+form label,
+form textarea {
+    display: block;
+    font-size: 2.4rem;
+}
+form input,
+form textarea {
+    margin: 2rem auto;
+    width: 50%;
+
+}
+
+form button {
+    margin-top: 4rem;
+    padding: 1rem 4rem;
+    background: rgb(182, 54, 54);
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 50%;
+}

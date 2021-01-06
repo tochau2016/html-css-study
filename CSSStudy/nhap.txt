@@ -1,0 +1,66 @@
+/* button:nth-child(1) {
+    padding: 2rem 4rem;
+    cursor: pointer;
+}
+.box1,
+.box2,
+.box3 {
+    width: 48%;
+    margin: 0.5%;
+    padding: 2rem;
+    height: 30rem;
+    border: 2px solid hsl(0, 0%, 0%);
+    font-size: 2.8rem;
+}
+
+.box1 {
+    float: left;
+}
+.box2 {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.box3 {
+    width: 100%;
+} */
+/* 
+button:hover {
+    background-color: crimson;
+    padding: 3rem 4rem;
+}
+
+button:focus {
+    background: lightgreen;
+}
+
+input:focus {
+    background: lightgreen;
+} */
+
+<!-- <div class="container">
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</div> -->
+<!-- <button>Submit</button>
+<button>Submit</button>
+<button>Submit</button>
+<input type="text" name=" " id=""> -->
+
+<!-- <div class="box1">
+<h2>Box1</h2>
+<p>Lorem ipsum dolor sit ame</p>
+</div>
+<div class="box2">
+<h2>Box2</h2>
+<p>Lorem ipsum, dolor sit amasdasd</p>
+</div>
+<div class="clear"></div>
+<div class="box3">
+<h2>Box3</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ad fuga facere incidunt soluta quaerat illo quis ipsa delectus omnis molestias cupiditate quos, eligendi ratione error officiis nisi natus aperiam!</p>
+</div> -->

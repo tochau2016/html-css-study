@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <div id="product-detail">
+    </div>
+</head>
+
+<body>
+
+
+    <script>
+        var products = [
+            {
+                id: "1",
+                name: "iPhone 12",
+                price: 30000000,
+                color: ["white", "black"],
+                spec: {
+                    cpu: "A14",
+                    ram: "4Gb"
+                },
+            },
+            {
+                id: "2",
+                name: "iPhone 11",
+                price: 20000000,
+                color: ["white", "black"],
+                spec: {
+                    cpu: "A13",
+                    ram: "4Gb"
+                },
+
+            },
+        ];
+
+        function renderProduct() {
+            var productsHtml = "";
+            products.forEach(function (item, index) {
+                productsHtml = productsHtml + `
+                <h3>${item.name}</h3>
+                <p>${item.price}</p>
+                <p>${item.color}</p>
+                <p>${item.spec.cpu}</p>        
+                `
+            });
+
+            document.getElementById("product-detail").innerHTML = productsHtml;
+        };
+
+        renderProduct()
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>To do list</h3>
+    <input type="text" name="name" id="name">
+    <button id="add-btn" onclick="addTask()">Thêm</button>
+    <div id="list"></div>
+    <script>
+        var toDoList = {
+            list: [],
+            getLocal: function () {
+                this.list = JSON.parse(localStorage.getItem("toDoList")) || [];
+                return this;
+            },
+            setLocal: function () {
+                localStorage.setItem("toDoList", JSON.stringify(this.list));
+                return this;
+            },
+            render: function () {
+                var listHtml = "";
+                this.list.forEach(function (item, index) {
+                    listHtml = listHtml + "<p><a href='#' onclick='deleteTask(" + index + ")'" + index + "'>Xóa</a> " + item + "</p>";
+                });
+
+                const listElement = document.getElementById("list");
+                listElement.innerHTML = listHtml;
+                return this;
+            },
+            add: function () {
+                const nameElement = document.getElementById("name");
+                if (nameElement.value.length > 0) {
+                    this.list.push(nameElement.value);
+                    this.setLocal().render();
+                    nameElement.value = "";
+                }
+                return this;
+            },
+            delete: function (index) {
+                this.list.splice(index, 1);
+                this.setLocal().render();
+                return this;
+            }
+        };
+
+        toDoList.getLocal().render();
+
+        function addTask() {
+            toDoList.add();
+        }
+
+        function deleteTask(index) {
+            toDoList.delete(index)
+        }
+
+    </script>
+</body>
+
+</html>
