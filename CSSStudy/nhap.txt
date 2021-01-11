@@ -64,3 +64,20 @@ input:focus {
 <h2>Box3</h2>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ad fuga facere incidunt soluta quaerat illo quis ipsa delectus omnis molestias cupiditate quos, eligendi ratione error officiis nisi natus aperiam!</p>
 </div> -->
+
+.box1 {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.box2 {
+    /* grid-column: 2/3; */
+    grid-row: 2/4;
+}
+
+.box3 {
+    grid-column: 2/4;
+}
+/* .box3 {
+    grid-column: 1/3;
+} */

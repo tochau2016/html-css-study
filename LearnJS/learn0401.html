@@ -42,7 +42,10 @@
                     this.list.push(nameElement.value);
                     this.setLocal().render();
                     nameElement.value = "";
-                }
+                    nameElement.nextElementSibling.innerHTML = ""
+                } else {
+                nameElement.nextElementSibling.innerHTML = "Ban can nhap ten task"
+            }
                 return this;
             },
 
