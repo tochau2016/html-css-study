@@ -202,3 +202,45 @@
     });
 
 })(jQuery);
+
+var products = [
+    {
+        id: "1",
+        name: "iPhone 12",
+        price: 30000000,
+        color: ["white", "black"],
+        spec: {
+            cpu: "A14",
+            ram: "4Gb"
+        },
+    },
+    // {
+    //     id: "2",
+    //     name: "iPhone 11",
+    //     price: 20000000,
+    //     color: ["white", "black"],
+    //     spec: {
+    //         cpu: "A13",
+    //         ram: "4Gb"
+    //     },
+
+    // },
+];
+
+function renderProduct() {
+    var productsHtml = "";
+    products.forEach(function (item, index) {
+        productsHtml = productsHtml + `
+        <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">${item.name}</a>
+        <p>${item.price}</p>
+        <p>${item.color[0]}</p>
+        <p>${item.spec.cpu}</p>
+                
+        `
+    });
+
+    document.getElementById("product-detail").innerHTML = productsHtml;
+    // document.getElementById("product-detail2").innerHTML = productsHtml;
+};
+
+renderProduct()
