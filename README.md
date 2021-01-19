@@ -13,6 +13,14 @@ git push -u -f myfriend master (name of branch)
 
 git switch -c (name of new branch)    
 
+Pull a repo    
+git pull origin master --allow-unrelated-histories    
+
+
+Error Merge ( ailed; fix conflicts and then commit the result.)    
+PS D:\shoesshop> git add .    
+PS D:\shoesshop> git commit -m "Test Merge"    
+
 echo "# shoesshop" >> README.md    
 git init    
 git add README.md   
