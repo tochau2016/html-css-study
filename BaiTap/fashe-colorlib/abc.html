@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+   
+   *{
+     margin: 0;
+     padding: 0;
+   }
+    .container {
+      width: 300px;
+      height: 100vh;
+      background-color: red;
+      transform: translate(-300px, 0);
+      transition: 0.3s;
+    }
+    .show {
+      transform: translate(0, 0);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="container">
+    Home
+  </div>
+  <button onclick="toggleContainer()">Ẩn/Hiện</button>
+  
+  <script>
+    function toggleContainer() {
+      var containerElement = document.getElementById("container");
+      if (containerElement.className.indexOf("show") !== -1) {
+        containerElement.classList.remove("show");
+      } else {
+        containerElement.classList.add("show");
+      }
+    }
+  </script>
+</body>
+</html>

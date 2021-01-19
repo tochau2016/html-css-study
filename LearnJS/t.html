@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <label>search</label>
+    <input type="search" id="search">
+    <button onclick="">Search</button><br>
+    <label>Tieu de</label>
+    <input type="text"  id="title">
+    <label>Noi dung</label>
+    <input type="text"  id="content">
+    <div class="text-danger"></div>
+    <button onclick="addTask()">Add Task</button>
+    <div id="list"></div>
+    <button onclick="clearTask()">Delete</button>
+    <script>
+        var toDoList = [];
+
+        function renderToDoList() {
+            var listHtml = "";
+            toDoList.forEach(function (item, index) {
+                listHtml = listHtml + `
+                    <div>
+                        <p>Title: ${item.title}</p>
+                        <p>Noi dung: ${item.content}</p>
+                    </div>
+                    <button onclick="removeTask(${index})">Xóa</button>
+                    <button onclick="editTask(${index})">Sửa</button>
+                    `
+    
+            });
+            document.getElementById("list").innerHTML = listHtml;
+        }
+        toDoList.unshift({
+                    title: nameElement.value,
+                    content: content.value,
+                });
+                renderToDoList();
+                nameElement.value = "";
+                content.value = "";
+                nameElement.nextElementSibling.innerHTML = ""
+        function addTask() {
+            var nameElement = document.getElementById("title");
+            var content = document.getElementById("content");
+            if (nameElement.value.length > 0) {
+                toDoList.push({
+                title:nameElement.value,
+                content:content.value,
+            });
+                renderToDoList();
+                nameElement.value = "";
+                content.value = "";
+                nameElement.nextElementSibling.innerHTML = ""
+            } else {
+                nameElement.nextElementSibling.innerHTML = "Ban can nhap ten task"
+            }
+            renderToDoList()
+        }
+        function editTask(index){
+             
+        }
+
+        function removeTask(index) {
+            toDoList.splice(index, 1);
+            renderToDoList();
+        }
+        function clearTask() {
+            toDoList.length = 0;
+            renderToDoList();
+        }
+        function search(){
+            
+        }
+        var inputElements = document.getElementsById("search");
+        inputElements.onchang = search;
+    </script>
+</body>
+
+</html>
