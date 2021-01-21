@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <p id="display"></p>
+    <h1>Welcome to new page</h1>
+</body>
+<script>
+    
+    // var soluongHS = prompt("Nhap so luong hs: ");
+    // number = parseInt(soluongHS);
+    // var out = [];
+    // var dem = 0;
+
+    // for(var i = 0; i < number; i++){
+    //     list = i+1;
+    //     mark = prompt("Nhap diem cho hs thu "+list);
+    //     mark = parseFloat(mark);
+    //     out.push(mark);
+        
+    // }
+
+    // for (var a = 0; a < out.length; a++){
+    //     document.writeln("Điểm số thứ " + (a+1) + " là: " + out[a] + "<br>");
+    //     out.sort();
+    //     if (out[a] >= 5){
+    //         dem++;
+    //         // document.writeln("Số học sinh có điểm >= 5: " + out[a] + "<br>");
+    //     }
+    // }
+    // document.writeln("Điểm của các học sinh sau khi sắp xếp: ");
+
+    // document.writeln("Số học sinh có điểm >= 5: " + dem);
+
+    var soluongHS = prompt("Nhap so luong hs: ");
+    var out = [];
+    var dem = 0;
+
+    for(var i = 0; i < prompt(soluongHS); i++){
+        // list = i+1;
+        var mark = prompt(`Nhap diem cho hs thu ${i+1}`);
+        mark = parseFloat(mark);
+        out.push(mark);
+        
+    }
+
+    for (var a = 0; a < out.length; a++){
+        document.writeln("Điểm số thứ " + (a+1) + " là: " + out[a] + "<br>");
+        out.sort();
+        if (out[a] >= 5){
+            dem++;
+            // document.writeln("Số học sinh có điểm >= 5: " + out[a] + "<br>");
+        }
+    }
+    document.writeln("Điểm của các học sinh sau khi sắp xếp: ");
+
+    document.writeln("Số học sinh có điểm >= 5: " + dem);
+</script>
+</html>

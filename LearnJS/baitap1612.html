@@ -50,11 +50,10 @@
         var input
         var arrNumber = []
         var total = 0
-        var show = "Các số bạn vừa nhập là: \n"
+        var show = "Nhap so luong hoc sinh: \n"
 
         while (input != 999) {
-            input = prompt("Hãy nhập các số lớn hơn 0 và nhỏ hơn hoặc bằng 100 \n"
-                + "Hoặc nhập 999 để dừng nhập", 999)
+            input = prompt("Hãy nhập các số lớn hơn 0 và nhỏ hơn hoặc bằng 100 \n")
             input = parseInt(input)
 
             if (input >= 1 && input <= 100) {

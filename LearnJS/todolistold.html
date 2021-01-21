@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script pt src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title">
+                    <div class="text-danger"></div>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="content">
+                    <div class="text-danger"></div>
+                </div>
+                <button class="btn btn-primary" onclick="addTask()">Add</button>
+                <button onclick="clearTask()" class="btn btn-primary">Delete</button>
+
+            </div>
+            <div class="col-lg-8">
+                <div class="form-group">
+                    <label for="search">Search</label>
+                    <input type="text" class="form-control" id="search" >
+                    <!-- onchange="search()" -->
+                    <button class="btn btn-primary" onclick="search()">Search</button>
+                </div>
+
+                <div id="list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var toDoList = [];
+
+
+        function renderToDoList(a) {
+            var listHtml = "";
+            toDoList.forEach(function (item, index) {
+                listHtml = listHtml + `
+                <div>
+                    <p>Title: ${item.title}</p>
+                    <p>Noi dung: ${item.content}</p>
+                    </div>
+                    <button onclick="removeTask(${index})">Xóa</button>
+                    <button onclick="editTask(${index})">Sửa</button>
+                    `
+            });
+
+            document.getElementById("list").innerHTML = listHtml;
+        }
+
+        function addTask() {
+            var nameElement = document.getElementById("title");
+            var content = document.getElementById("content");
+            if (nameElement.value.length <= 0 && content.value.length <= 0){
+                nameElement.classList.add("is-invalid");
+                content.classList.add("is-invalid");
+                nameElement.nextElementSibling.innerHTML = "Bạn cần nhập tiêu đề"
+                content.nextElementSibling.innerHTML = "Bạn cần nhập chi tiết"    
+            } else if (nameElement.value.length <= 0) {
+                content.classList.add("valid");
+                nameElement.nextElementSibling.innerHTML = "Bạn cần nhập tiêu đề"
+                content.nextElementSibling.innerHTML = ""
+            } else if (content.value.length <= 0) {
+                nameElement.nextElementSibling.innerHTML = ""
+                content.nextElementSibling.innerHTML = "Bạn cần nhập chi tiết"
+            } else {
+                toDoList.unshift({
+                    title: nameElement.value,
+                    content: content.value,
+                });
+                renderToDoList();
+                nameElement.value = "";
+                content.value = "";
+                nameElement.nextElementSibling.innerHTML = ""
+                content.nextElementSibling.innerHTML = ""
+            }
+            renderToDoList()
+        }
+        function editTask(index) {
+
+        }
+
+        function removeTask(index) {
+            toDoList.splice(index, 1);
+            renderToDoList();
+        }
+        function clearTask() {
+            toDoList.length = 0;
+            renderToDoList();
+        }
+        function search() {
+            var inputElements = document.getElementById("search");
+            // var atitle = inputElements.value;
+            var arr = toDoList.filter(function (todo) {
+                // return todo.title.indexOf(inputElements) !== -1;
+            //     var item = [
+            //         {
+            //             title: "",
+            //             content: ""
+            //         }
+            //     ]
+            //     return item.title.toLowerCase().indexOf(inputElements.value.trim().toLowerCase()) !== -1;
+            });
+            // var listHtml = "";
+            document.getElementById("list").innerHTML = listHtml;
+            arr.forEach(function (item, index) {
+                listHtml = listHtml + `
+                    <div>
+                        <p>Title: ${item.title}</p>
+                        <p>Noi dung: ${item.content}</p>
+                    </div>
+                    <button onclick="removeTask(${index})">Xóa</button>
+                    <button onclick="editTask(${index})">Sửa</button>
+                    `
+
+            });
+            document.getElementById("list").innerHTML = listHtml;
+            if (inputElements === "") {
+                renderToDoList();
+            }
+            renderToDoList(arr);
+            
+                
+        }
+
+
+    </script>
+</body>
+
+</html>

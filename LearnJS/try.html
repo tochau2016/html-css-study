@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var entry;
+    var total = 0;
+    entry = prompt("Nhập điểm thứ nhất: ");
+    var score1 = parseFloat(entry);
+    total = total + score1;
+
+    entry = prompt("Nhập điểm thứ hai: ");
+    var score2 = parseFloat(entry);
+    total = total + score2;
+
+    entry = prompt("Nhập điểm thứ ba: ");
+    var score3 = parseFloat(entry);
+    total = total + score3;
+
+    var average = total / 3;
+    average = parseInt(average);
+    alert("Điểm trung bình là: " + average);
+  </script>
+</head>
+<body>
+  <script>
+    document.writeln("<h1>ABC</h1>");
+    document.writeln("<pre>Điểm số thứ nhất là: " + score1);
+    document.writeln("Điểm số thứ hai là: " + score2);
+    document.writeln("Điểm số thứ ba là: " + score3);
+    document.writeln("Điểm trung bình là: " + average + "</pre>");
+  </script>
+</body>
+</html>

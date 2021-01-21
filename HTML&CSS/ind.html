@@ -26,6 +26,11 @@
       total = total + scores[i]
       show = show + scores[i] + "\n"
     }
+
+            for (var i = 0; i < arrNumber.length; i++) {
+            total += arrNumber[i]
+            show += arrNumber[i] + "\n"
+        }
     
     average = parseInt(total/scores.length);
     alert(total + " " + show + "\nAverage score is " + average);
