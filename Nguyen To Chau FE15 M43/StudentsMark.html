@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mark</title>
+
+</head>
+
+<body>
+    <p id="display"></p>
+    <p id="display2"></p>
+    <p id="display3"></p>
+</body>
+<script>
+
+
+
+
+    var scoreArray = [];
+    var print = "";
+    function enterScore() {
+        var soluongHS = prompt("Number of total students: ", 5);
+        soluongHS = parseFloat(soluongHS);
+        for (var i = 0; i < soluongHS; i++) {
+            var c = i + 1;
+            var Score = prompt("Student number " + c);
+            Score = parseFloat(Score);
+            while (isNaN(Score) || Score > 10 || Score < 0) {
+                alert("Please enter mark from 0 - 10")
+                Score = prompt("Student number " + c);
+                Score = parseFloat(Score);
+            }
+            scoreArray.push(Score);
+        }
+    }
+    function ScoreGreaterFive() {
+        print = "Student have mark >= 5 : ";
+        for (var i = 0; i < scoreArray.length; i++) {
+            if (scoreArray[i] >= 5) {
+                print = print + `${ scoreArray[i] } `
+            }
+        }
+    }
+    enterScore();
+    ScoreGreaterFive();
+    document.getElementById("display2").innerHTML = print;
+    document.getElementById("display").innerHTML = scoreArray;
+    document.getElementById("display3").innerHTML = `Descending: ${ scoreArray.sort(function (a, b) { return b - a }) }`;
+</script>
+
+</html>

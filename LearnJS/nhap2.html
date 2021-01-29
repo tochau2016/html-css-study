@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,5 +38,111 @@
         var btnElement = $("btn");
         $("btn").onclick = display;
     </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      margin: 24px auto 0;
+      padding: 16px;
+      width: 400px;
+      border: 1px solid gray;
+    }
+    .form-input {
+      margin: 8px 0;
+      width: 100%;
+      height: 24px;
+    }
+    .form-btn {
+      margin-top: 8px;
+      width: 100%;
+      height: 24px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>Tổng số hộp bánh</div>
+    <input type="text" class="form-input" id="total">
+    <div class="error"></div>
+    <div>Số hộp bánh được tặng</div>
+    <input type="text" class="form-input" id="donate">
+    <div class="error"></div>
+    <div>VAT</div>
+    <input type="text" class="form-input" id="vat">
+    <div class="error"></div>
+    <div>Thành tiền</div>
+    <input type="text" class="form-input" id="money">
+    <button class="form-btn" id="calculate">Tính</button>
+  </div>
+
+  <script>
+    function calculate() {
+      var isValid = true;
+      var money = 0;
+      
+      var totalElement = document.getElementById("total");
+      var totalValue = parseInt(totalElement.value);
+      if(isNaN(totalValue)) {
+        totalElement.nextElementSibling.innerHTML = "Bạn chưa nhập tổng số hộp bánh";
+        isValid = false;
+      } else if (totalValue < 0) {
+        totalElement.nextElementSibling.innerHTML = "Bạn không được nhập số âm";
+        isValid = false;
+      } else {
+        totalElement.nextElementSibling.innerHTML = "";
+      }
+
+      var donateElement = document.getElementById("donate");
+      var donateValue = parseInt(donateElement.value);
+      if(isNaN(donateValue)) {
+        donateElement.nextElementSibling.innerHTML = "Bạn chưa nhập số hộp bánh được tặng";
+        isValid = false;
+      } else if (donateValue < 0) {
+        donateElement.nextElementSibling.innerHTML = "Bạn không được nhập số âm";
+        isValid = false;
+      } else if (donateValue > totalValue) {
+        donateElement.nextElementSibling.innerHTML = "Số hộp bánh được tặng không được lớn hơn tổng số hộp bánh";
+        isValid = false;
+      } else {
+        donateElement.nextElementSibling.innerHTML = "";
+      }
+
+      var vatElement = document.getElementById("vat");
+      var vatValue = parseInt(vatElement.value);
+      if(isNaN(vatValue)) {
+        vatElement.nextElementSibling.innerHTML = "Bạn chưa nhập VAT";
+        isValid = false;
+      } else if (vatValue < 0 || vatValue > 100) {
+        vatElement.nextElementSibling.innerHTML = "VAT phải trong khoảng 0% - 100%";
+        isValid = false;
+      } else {
+        vatElement.nextElementSibling.innerHTML = "";
+      }
+
+      if (isValid) {
+        var buyCount = totalValue - donateValue;
+        if (buyCount < 50) {
+          money = buyCount * 50000 * (100 + vatValue) / 100;
+        } else if (buyCount >= 50 && buyCount < 100) {
+          money = buyCount * 45000 * (100 + vatValue) / 100;
+        } else {
+          money = buyCount * 40000 * (100 + vatValue) / 100;
+        }
+        document.getElementById("money").value = money.toLocaleString();
+      }
+    }
+
+    document.getElementById("calculate").onclick = calculate;
+  </script>
 </body>
 </html>

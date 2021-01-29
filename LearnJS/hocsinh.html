@@ -1,66 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
-
 <body>
-    <p id="display"></p>
-    <h1>Welcome to new page</h1>
-</body>
-<script>
-    
-    // var soluongHS = prompt("Nhap so luong hs: ");
-    // number = parseInt(soluongHS);
-    // var out = [];
-    // var dem = 0;
+  <div id="full-score"></div>
+  <div id="pass-count"></div>
 
-    // for(var i = 0; i < number; i++){
-    //     list = i+1;
-    //     mark = prompt("Nhap diem cho hs thu "+list);
-    //     mark = parseFloat(mark);
-    //     out.push(mark);
-        
+  <script>
+    // var students = [];
+    // var passCount = 0;
+    // var studentLength = prompt("Nhập số lượng học sinh");
+    // for (var i = 0; i < parseInt(studentLength); i++) {
+    //   var studentScore = parseInt(prompt(`Nhập số điểm của học sinh ${i + 1}`));
+    //   students.push(studentScore);
+    //   if (studentScore >= 5) {
+    //     passCount = passCount + 1;
+    //   }
     // }
-
-    // for (var a = 0; a < out.length; a++){
-    //     document.writeln("Điểm số thứ " + (a+1) + " là: " + out[a] + "<br>");
-    //     out.sort();
-    //     if (out[a] >= 5){
-    //         dem++;
-    //         // document.writeln("Số học sinh có điểm >= 5: " + out[a] + "<br>");
-    //     }
-    // }
-    // document.writeln("Điểm của các học sinh sau khi sắp xếp: ");
-
-    // document.writeln("Số học sinh có điểm >= 5: " + dem);
-
-    var soluongHS = prompt("Nhap so luong hs: ");
-    var out = [];
-    var dem = 0;
-
-    for(var i = 0; i < prompt(soluongHS); i++){
-        // list = i+1;
-        var mark = prompt(`Nhap diem cho hs thu ${i+1}`);
-        mark = parseFloat(mark);
-        out.push(mark);
-        
-    }
-
-    for (var a = 0; a < out.length; a++){
-        document.writeln("Điểm số thứ " + (a+1) + " là: " + out[a] + "<br>");
-        out.sort();
-        if (out[a] >= 5){
-            dem++;
-            // document.writeln("Số học sinh có điểm >= 5: " + out[a] + "<br>");
+    // document.getElementById("full-score").innerHTML = students.join(', ');
+    // document.getElementById("pass-count").innerHTML = `Số học sinh có điểm >= 5: ${passCount}`;
+    var ScoreArray = [];
+    var html = "";
+    function enterScore() {
+        var soluongHS = prompt("Nhập số lượng học sinh: ");
+        soluongHS = parseFloat(soluongHS);
+        for (var i = 0; i < soluongHS; i++) {
+            var c = i + 1;
+            var Score = prompt("Nhập điểm cho học sinh thứ " + c);
+            Score = parseFloat(Score);
+            while (isNaN(Score) || Score > 10 || Score < 0) {
+                alert("Nhập sai rồi vui lòng nhập lại")
+                Score = prompt("Nhập điểm cho học sinh thứ " + c);
+                Score = parseFloat(Score);
+            }
+            ScoreArray.push(Score);
         }
     }
-    document.writeln("Điểm của các học sinh sau khi sắp xếp: ");
-
-    document.writeln("Số học sinh có điểm >= 5: " + dem);
-</script>
+    function ScoreGreaterFive() {
+        html = "Số điểm lớn hơn hoặc bằng 5 là: ";
+        for (var i = 0; i < ScoreArray.length; i++) {
+            if (ScoreArray[i] >= 5) {
+                html = html + `${ ScoreArray[i] }`
+            }
+        }
+    }
+    enterScore();
+    ScoreGreaterFive();
+    document.getElementById("display2").innerHTML = html;
+    document.getElementById("display").innerHTML = ScoreArray;
+    document.getElementById("display3").innerHTML = `Descending: ${ ScoreArray.sort(function (a, b) { return b - a }) }`;
+  </script>
+</body>
 </html>

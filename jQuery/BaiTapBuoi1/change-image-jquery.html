@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script pt src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img id="image" src="https://via.placeholder.com/500" width="100%" height="auto" alt="">
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="thumbnail"
+                            src="https://i.pinimg.com/originals/c3/b2/89/c3b2892e17deba5178e1607f7ce90a73.jpg"
+                            width="100%" height="auto" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="thumbnail" src="https://genk.mediacdn.vn/2019/6/16/anh-1-1560665499838121255197.jpg"
+                            width="100%" height="auto" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="thumbnail"
+                            src="https://gaubongonline.vn/wp-content/uploads/2018/02/gau-bong-totoro.jpg" width="100%"
+                            height="auto" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    $(document).ready(function () {
+            // $(".thumbnail").each(function () {
+            //     var swapImage = new Image();
+            //     swapImage.src = $(this).attr("src");
+            // });
+            
+            $(".thumbnail").click(function (evt) {
+                var imageURL = $(this).attr("src");
+                $("#image").attr("src", imageURL);
+                
+                // evt.preventDefault();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

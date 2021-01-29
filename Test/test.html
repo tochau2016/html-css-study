@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HHHHH</h1>
+    <label for="email_address">Email: </label>
+    <input type="text" name="email_address" id="email_address"><br>
+
+    <label>&nbsp</label>
+    <input type="button" value="Join our list" id="join_list">
+    <script>
+        var $ = function (id) {
+            return document.getElementById(id);
+        } 
+        var joinList = function () {
+            alert("The joinList function is being run.");
+        }
+        var changeValue = function () {
+            alert("The changeValue function is being run.");
+
+            window.onload = function () {
+                $("join_list").onclick = joinList;
+                $("email_address").onchange = changeValue;
+            }
+        }
+    </script>
+</body>
+</html>
