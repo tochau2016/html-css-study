@@ -50,16 +50,11 @@
     <script>
 
     $(document).ready(function () {
-            // $(".thumbnail").each(function () {
-            //     var swapImage = new Image();
-            //     swapImage.src = $(this).attr("src");
-            // });
             
             $(".thumbnail").click(function (evt) {
                 var imageURL = $(this).attr("src");
                 $("#image").attr("src", imageURL);
-                
-                // evt.preventDefault();
+                $("#thumbnail").slideDown(1000)
             });
         });
 

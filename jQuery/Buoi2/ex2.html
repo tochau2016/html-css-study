@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <button id="button">Ahihi</button>
+
+    <h2>ABC</h2>
+    <div>abc</div>
+    <hr />
+    <h2>XYZ</h2>
+    <div>xyz</div>
+    <hr />
+    <h2>123</h2>
+    <div>321</div>
+    <script>
+        $(document).ready(function () {
+            $("#button").hover(
+                function () {
+                    console.log("Hover vào");
+                },
+                function () {
+                    console.log("Hover ra");
+                }
+            );
+
+            // document.getElementById("adas").nextElementSibling
+
+
+
+            $("h2").click(function () {
+                $(this).toggleClass("show");
+                if ($(this).attr("class") !== "show") {
+                    $(this).next().slideDown(500);
+                } else {
+                    $(this).next().slideUp(500);
+                }
+            });
+
+            // $("h2").click(function () {
+            //     $(this).slideToggle(500);
+            // });
+        });
+
+      // function toggleH2() {
+      //   this.classList.toggle("show");
+      //   if (this.getAttribute("class") !== "show") {
+      //     this.nextElementSibling.style.display = "none";
+      //   } else {
+      //     this.nextElementSibling.style.display = "block";
+      //   }
+      // }
+
+      // var h2Elements = document.getElementsByTagName("h2");
+      // for (var i = 0; i < h2Elements.length; i++) {
+      //   h2Elements[i].onclick = toggleH2;
+      // }
+    </script>
+</body>
+
+</html>

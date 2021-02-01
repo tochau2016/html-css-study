@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script pt src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <h3>To Do List</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+              <label for="title">Title</label>
+              <div class="text-danger"></div>
+            </div>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="description" name="description" placeholder="Description">
+              <label for="description">Description</label>
+              <div class="text-danger"></div>
+            </div>
+            <button class="btn btn-primary w-100 mt-3" id="add-btn" onclick="addTask()">Thêm</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="search" placeholder="Search...">
+          <button class="btn btn-outline-primary" type="button" id="search-btn">Search</button>
+        </div>
+        <div class="mt-3" id="todo-list">
+          <!-- render todo list -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var toDoList = [];
+
+    function renderToDoList(toDoList) {
+      var todoListHtml = "";
+      toDoList.forEach(function(item, index) {
+        todoListHtml = todoListHtml + `
+          <div class="card mt-3">
+            <div class="card-header d-flex justify-content-end">
+              <button class="btn btn-outline-primary me-2" onclick="editTask(${index})">Edit</button>
+              <button class="btn btn-outline-danger" onclick="deleteTask(${index})">Delete</button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Title: ${item.title}</h5>
+              <p class="card-text">Description: ${item.description}</p>
+            </div>
+          </div>
+        `;
+      })
+
+      var todoListElement = document.getElementById("todo-list");
+      todoListElement.innerHTML = todoListHtml;
+    }
+    var i;
+    function editTask(index) {
+        console.log("abc")
+        i=index;
+        document.getElementById("title").value = toDoList[index].title;
+        document.getElementById("description").value = toDoList[index].description;
+        document.getElementById("add-btn").innerHTML = "Lưu"
+        document.getElementById("add-btn").onclick = saveTask;
+    }
+
+    function saveTask(){
+        var title = document.getElementById("title").value
+        var des = document.getElementById("description").value
+        toDoList[i].title = title;
+        toDoList[i].description = des;
+        renderToDoList(toDoList);
+        alert("Lưu Thành Công");
+        document.getElementById("add-btn").innerHTML = "Thêm"
+        document.getElementById("add-btn").onclick = addTask;
+
+    }
+    function addTask() {
+      var isValid = true;
+
+      var titleElement = document.getElementById("title");
+      if (titleElement.value.length === 0) {
+        titleElement.classList.add("is-invalid");
+        titleElement.nextElementSibling.nextElementSibling.innerHTML = "Bạn cần nhập tiêu đề";
+        isValid = false;
+      } else {
+        titleElement.classList.remove("is-invalid");
+        titleElement.nextElementSibling.nextElementSibling.innerHTML = "";
+      }
+
+      var descriptionElement = document.getElementById("description");
+      if (descriptionElement.value.length === 0) {
+        descriptionElement.classList.add("is-invalid");
+        descriptionElement.nextElementSibling.nextElementSibling.innerHTML = "Bạn cần nhập chi tiết";
+        isValid = false;
+      } else {
+        descriptionElement.classList.remove("is-invalid");
+        descriptionElement.nextElementSibling.nextElementSibling.innerHTML = "";
+      }
+
+      if (isValid) {
+        var item = {
+          title: titleElement.value,
+          description: descriptionElement.value,
+        }
+        toDoList.unshift(item);
+
+        renderToDoList(toDoList);
+
+        titleElement.value = "";
+        descriptionElement.value = "";
+      }
+    }
+
+    function deleteTask(index) {
+      toDoList.splice(index, 1);
+
+      renderToDoList(toDoList);
+    }
+
+    function searchTask() {
+      var searchElement = document.getElementById("search");
+      var newToDoList = toDoList.filter(function(item) {
+        return item.title.toLowerCase().indexOf(searchElement.value.trim().toLowerCase()) !== -1;
+      });
+      renderToDoList(newToDoList);
+    }
+
+    renderToDoList(toDoList);
+
+    document.getElementById('search-btn').onclick = searchTask;
+  </script>
+</body>
+</html>

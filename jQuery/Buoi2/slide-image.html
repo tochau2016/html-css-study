@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <img id="image" src="" width="500px" height="auto" alt="">
+        <button id="pre" onclick="prev()">Pre</button>
+        <button id="play" onclick="play()">Play</button>
+        <button id="pause">Pause</button>
+        <button id="next">Next</button>
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+            var imageArr = [
+                "https://via.placeholder.com/510",
+                "https://via.placeholder.com/520",
+                "https://via.placeholder.com/530",
+                "https://via.placeholder.com/540",
+                "https://via.placeholder.com/550",
+            ];
+
+            var index = 0;
+            var autoPlayInterval = setInterval(autoPlayImage, 2000);
+
+            function autoPlayImage() {
+                $("#image").fadeOut(500, function () {
+                    $("#image").attr("src", imageArr[index]);
+                    if (index + 1 === imageArr.length) {
+                        index = 0;
+                    } else {
+                        index = index + 1;
+                    }
+                }).fadeIn(500);
+                //   $("#image").fadeIn(500);
+            }
+
+
+            $("#next").click(function () {
+                $("#image").fadeOut(500, function () {
+                    if (index + 1 === imageArr.length) {
+                        index = 0;
+                    } else {
+                        index = index + 1;
+                    }
+                    $("#image").attr("src", imageArr[index]);
+                }).fadeIn(500);
+            });
+
+            // function pause() {
+            //     clearInterval(autoPlayInterval);
+            // }
+
+            $("#pause").click(function () {
+                clearInterval(autoPlayInterval);
+            });
+
+        });
+
+        // function prev() {
+        //     if (index === 0) {
+        //         index = imageArr.length - 1;
+        //     } else {
+        //         index = index - 1;
+        //     }
+        //     document.getElementById("image").src = imageArr[index];
+        // }
+
+
+        // function play() {
+        //     clearInterval(autoPlayInterval);
+        //     autoPlayInterval = setInterval(autoPlayImage, 2000);
+        // }
+
+    </script>
+</body>
+
+</html>
