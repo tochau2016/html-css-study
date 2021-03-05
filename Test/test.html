@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <h1>HHHHH</h1>
-    <label for="email_address">Email: </label>
-    <input type="text" name="email_address" id="email_address"><br>
+  <h3>To Do List</h3>
+  <input type="text" name="name" id="name" />
+  <span></span>
+  <button onclick="addTask()">Add Task</button>
+  <div id="list"></div>
 
-    <label>&nbsp</label>
-    <input type="button" value="Join our list" id="join_list">
-    <script>
-        var $ = function (id) {
-            return document.getElementById(id);
-        } 
-        var joinList = function () {
-            alert("The joinList function is being run.");
-        }
-        var changeValue = function () {
-            alert("The changeValue function is being run.");
+  <script>
+    function renderToDoList(toDoList) {
+      var listHtml = "";
+      toDoList.forEach(function(item, index) {
+        listHtml = listHtml + `<div>${item} <a href='#' onclick='removeTask(${index})'>Xóa</a></div>`;
+      });
+      document.getElementById("list").innerHTML = listHtml;
+    }
 
-            window.onload = function () {
-                $("join_list").onclick = joinList;
-                $("email_address").onchange = changeValue;
-            }
-        }
-    </script>
+    function addTask() {
+      var nameElement = document.getElementById("name");
+      var toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
+      if (nameElement.value.length > 0) {
+        toDoList.unshift(nameElement.value);
+        localStorage.setItem("toDoList", JSON.stringify(toDoList));
+        renderToDoList(toDoList);
+        nameElement.value = "";
+      } else {
+        nameElement.nextElementSibling.innerHTML = "Bạn cần nhập tên task !";
+      }
+    }
+
+    function removeTask(index) {
+      var toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
+      toDoList.splice(index, 1);
+      localStorage.setItem("toDoList", JSON.stringify(toDoList));
+      renderToDoList(toDoList);
+    }
+
+    renderToDoList(JSON.parse(localStorage.getItem('toDoList')) || [])
+  </script>
 </body>
 </html>

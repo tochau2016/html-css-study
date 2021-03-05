@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 12",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "iPhone 12 mini",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Samsung S21",
+      "categoryId": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Apple"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "tochau@gmail.com",
+      "password": 123
+    },
+    {
+      "id": 2,
+      "email": "tochau@gmail.com",
+      "password": 345
+    },
+    {
+      "id": 3,
+      "email": "tochau@gmail.com",
+      "password": 345
+    },
+    {
+      "id": 4,
+      "email": "tochau@gmail.com",
+      "password": 345
+    },
+    {
+      "id": 5,
+      "email": "tochau@gmail.com",
+      "password": 345
+    },
+    {
+      "id": 6,
+      "email": "tochau@gmail.com",
+      "password": 345
+    },
+    {
+      "id": 7,
+      "email": "tochau@gmail.com",
+      "password": 345
+    },
+    {
+      "id": 8,
+      "email": "tochau@gmail.com",
+      "password": 345
+    }
+  ],
+  "todos": [
+    {
+      "title": "abcdsa",
+      "description": "cdewqeq",
+      "id": 1
+    },
+    {
+      "title": "321",
+      "description": "3213",
+      "id": 2
+    },
+    {
+      "title": "dads",
+      "description": "cxz",
+      "id": 3
+    },
+    {
+      "title": "fewqsss",
+      "description": "xczfsa",
+      "id": 4
+    },
+    {
+      "title": "a",
+      "description": "b",
+      "id": 5
+    },
+    {
+      "title": "aaaddd",
+      "description": "aaa",
+      "id": 8
+    },
+    {
+      "title": "asdaas",
+      "description": "asdasdasdasd",
+      "id": 9
+    }
+  ]
+}

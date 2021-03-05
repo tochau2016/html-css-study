@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      pt
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="nav-container">
+      <div class="nav-content container">
+        <div class="logo">LOGO</div>
+        <div class="nav-menu">
+          <h5 class="text-danger me-3">Home</h5>
+          <h5 class="text-danger me-3">About</h5>
+          <a href="./login.html" class="btn btn-danger">Login</a>
+        </div>
+      </div>
+    </div>
+    <div class="register-bg-container">
+      <div class="register-form-container">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pills-register-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-register"
+              type="button"
+              role="tab"
+              aria-controls="pills-register"
+              aria-selected="true"
+            >
+              Register
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="pills-login-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-login"
+              type="button"
+              role="tab"
+              aria-controls="pills-login"
+              aria-selected="false"
+            >
+              Login
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content w-100" id="pills-tabContent">
+          <div
+            class="tab-pane fade"
+            id="pills-register"
+            role="tabpanel"
+            aria-labelledby="pills-register-tab"
+          >
+            <form class="w-100">
+              <label for="register-email">Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter email"
+                id="register-email"
+              />
+              <div class="text-danger"></div>
+
+              <label for="register-name" class="mt-2">Name:</label>
+              <input
+                type="name"
+                class="form-control"
+                placeholder="Enter name"
+                id="register-name"
+              />
+              <div class="text-danger"></div>
+
+              <label for="register-password" class="mt-2">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Enter password"
+                id="register-password"
+              />
+              <div class="text-danger"></div>
+
+              <label for="register-confirm-password" class="mt-2">Confirm Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Enter confirm password"
+                id="register-confirm-password"
+              />
+              <div class="text-danger"></div>
+    
+              <div class="form-check mt-2">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="register-is-agree"
+                />
+                <label class="form-check-label" for="isAgree">
+                  I agree
+                </label>
+              </div>
+              <button
+                type="button"
+                id="register-submit"
+                class="btn btn-danger mt-4 w-100"
+              >
+                REGISTER
+              </button>
+            </form>
+          </div>
+          <div
+            class="tab-pane fade show active"
+            id="pills-login"
+            role="tabpanel"
+            aria-labelledby="pills-login-tab"
+          >
+            <form class="w-100">
+              <label for="login-email">Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter email"
+                id="login-email"
+              />
+              <div class="text-danger"></div>
+
+              <label for="login-password" class="mt-2">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Enter password"
+                id="login-password"
+              />
+              <div class="text-danger"></div>
+    
+              <div class="form-check mt-2">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="login-is-remember"
+                />
+                <label class="form-check-label" for="login-is-remember">
+                  Remember me
+                </label>
+              </div>
+              <button
+                type="button"
+                id="login-submit"
+                class="btn btn-danger mt-4 w-100"
+              >
+                LOGIN
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-container">
+      <div class="footer-content container">
+        This is Footer
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        var userList = [];
+
+        $("#login-submit").click(function () {
+          var isValid = true;
+          var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
+          if ($("#login-email").val().trim().length === 0) {
+            $("#login-email").next().text("Bạn cần nhập email");
+            isValid = false;
+          } else if (!emailRegex.test($("#login-email").val().trim())) {
+            $("#login-email").next().text("Email sai định dạng");
+            isValid = false;
+          } else {
+            $("#login-email").next().text("");
+          }
+
+          if ($("#login-password").val().trim().length === 0) {
+            $("#login-password").next().text("Bạn cần nhập password");
+            isValid = false;
+          } else if ($("#login-password").val() < 8) {
+            $("#login-password")
+              .next()
+              .text("Password phải có độ dài tối thiểu là 8 kí tự");
+            isValid = false;
+          } else {
+            $("#login-password").next().text("");
+          }
+
+          if (isValid) {
+            var accountIndex = userList.findIndex(function (item) {
+              return (
+                item.email === $("#login-email").val() &&
+                item.password === $("#login-password").val()
+              );
+            });
+            if (accountIndex !== -1) {
+              localStorage.setItem(
+                "user",
+                JSON.stringify(userList[accountIndex])
+              );
+              window.location.href = "home.html";
+            } else {
+              $("#login-password").next().text("Tên đăng nhập hoặc mật khẩu không đúng");
+            }
+          }
+        });
+
+        $("#register-submit").click(function() {
+          var isValid = true;
+          var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
+          if ($("#register-email").val().trim().length === 0) {
+            $("#register-email").next().text("Bạn cần nhập email");
+            isValid = false;
+          } else if (!emailRegex.test($("#register-email").val().trim())) {
+            $("#register-email").next().text("Email sai định dạng");
+            isValid = false;
+          } else {
+            $("#register-email").next().text("");
+          }
+
+          if ($("#register-name").val().trim().length === 0) {
+            $("#register-name").next().text("Bạn cần nhập tên");
+            isValid = false;
+          } else {
+            $("#register-name").next().text("");
+          }
+
+          if ($("#register-password").val().length === 0) {
+            $("#register-password").next().text("Bạn cần nhập password");
+            isValid = false;
+          } else if ($("#register-password").val() < 8) {
+            $("#register-password")
+              .next()
+              .text("Mật khẩu phải có độ dài tối thiểu là 8 kí tự");
+            isValid = false;
+          } else {
+            $("#register-password").next().text("");
+          }
+
+          if ($("#register-confirm-password").val() !== $("#register-password").val()) {
+            $("#register-confirm-password")
+              .next()
+              .text("Xác nhận mật khẩu không khớp");
+            isValid = false;
+          } else {
+            $("#register-confirm-password").next().text("");
+          }
+
+          if (isValid) {
+            var accountIndex = userList.findIndex(function(item) {
+              return (item.email === $("#register-email").val());
+            });
+            if (accountIndex !== -1) {
+              $("#register-email").next().text("Email đã tồn tại");
+            } else {
+              var userInfo = {
+                email: $("#register-email").val().trim(),
+                name: $("#register-name").val().trim(),
+                password: $("#register-password").val(),
+              }
+              userList.push(userInfo);
+              $("#register-email").val("");
+              $("#register-name").val("");
+              $("#register-password").val("");
+              $("#register-confirm-password").val("");
+              alert("Bạn đã đăng kí thành công");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -106,7 +106,7 @@
       if ($('#rePwd').val().length === 0){
         $('#rePwd').next().text("Ban can nhap xac nhan password") 
         isValid = false;
-      } else if ($('pwd').val() != $('#rePwd').val()) {
+      } else if ($('#pwd').val() != $('#rePwd').val()) {
         $('#rePwd').next().text("Password ban vua nhap khong khop")
         isValid = false;
       } else {

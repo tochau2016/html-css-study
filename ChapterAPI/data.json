@@ -1,0 +1,72 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "iPhone 12",
+            "categoryId": 1
+        },
+        {
+            "id": 2,
+            "name": "iPhone 12 mini",
+            "categoryId": 1
+        },
+        {
+            "id": 3,
+            "name":"Samsung S21",
+            "categoryId": 2
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Apple"
+        },
+        {
+            "id": 2,
+            "name": "Samsung"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "email": "tochau@gmail.com",
+            "password": 123
+        },
+        {
+            "id": 2,
+            "email": "tochau@gmail.com",
+            "password": 345
+        },
+        {
+            "id": 3,
+            "email": "tochau@gmail.com",
+            "password": 345
+        },
+        {
+            "id": 4,
+            "email": "tochau@gmail.com",
+            "password": 345
+        },
+        {
+            "id": 5,
+            "email": "tochau@gmail.com",
+            "password": 345
+        },
+        {
+            "id": 6,
+            "email": "tochau@gmail.com",
+            "password": 345
+        },
+        {
+            "id": 7,
+            "email": "tochau@gmail.com",
+            "password": 345
+        },
+        {
+            "id": 8,
+            "email": "tochau@gmail.com",
+            "password": 345
+        }
+
+    ]
+}
