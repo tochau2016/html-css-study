@@ -1,0 +1,6 @@
+    const [count, setCount] = useState(0);
+
+    count: state
+    setCount: là function thay đổi state đó, chạy test state
+    useState(0): 0 là giá trị mặc định là state. Bên trong useState(0) là [0, function]
+    - Là cú pháp của state 
