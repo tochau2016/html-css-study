@@ -17,11 +17,11 @@ function Main(props) {
             description: "Des F",
             members: ["A", "B", "C"],
         },
-        {
-            name: "Group F",
-            description: "Des F ",
-            members: ["A", "B", "C"],
-        },
+        // {
+        //     name: "Group F",
+        //     description: "Des F ",
+        //     members: ["A", "B", "C"],
+        // },
 
     ]
     const [isShowMoreItem, setIsShowMoreItem] = useState([{
@@ -39,7 +39,8 @@ function Main(props) {
         description: "Des C",
         members: ["A", "B"],
     },]);
-    
+
+
 
     function renderGroupList() {
         return isShowMoreItem.map((item, i) => {
@@ -48,12 +49,12 @@ function Main(props) {
 
         });
     }
-function loadMore(){
+    function loadMore() {
+        setIsShowMoreItem(isShowMoreItem.concat(groupList))
 
-        setIsShowMoreItem(isShowMoreItem.concat(groupList))//
-    
-}
+        console.log("🚀 ~ file: Main.jsx ~ line 49 ~ loadMore ~ isShowMoreItem", isShowMoreItem)
 
+    }
     return (
         <div style={{ width: props.isShowSidebar ? "100%-300px" : "100%", height: "1000px", backgroundColor: "white" }}>
             <div className="main-container p-3">
@@ -61,8 +62,8 @@ function loadMore(){
                     {renderGroupList()}
                 </div>
                 <button className="btn btn-primary"
-                onClick={() => loadMore()}
-            >Load More</button>
+                    onClick={() => loadMore()}
+                >Load More</button>
             </div>
         </div>
     );

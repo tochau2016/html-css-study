@@ -4,7 +4,6 @@ import Item from './Item'
 
 function Main() {
     const [count, setCount] = useState(0);
-    let index = 0;
 
     return (
         <>
