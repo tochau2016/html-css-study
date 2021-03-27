@@ -1,0 +1,18 @@
+const [todoList, setToDoList] = useState([])
+function renderToDoList(){
+    
+
+return todoList.map((item, index) => {
+    return (
+        <card title={item.name}></card>
+        
+    )
+})
+}
+return ({renderToDoList})
+function edit () {
+    const newToDoList = todoList;
+    newToDoList.splice(index,1,...)
+    setToDoList(newToDoList) 
+    [...newToDoList]
+}
