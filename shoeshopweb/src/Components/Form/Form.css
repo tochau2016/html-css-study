@@ -1,0 +1,25 @@
+@import '~antd/dist/antd.css';
+
+* {
+    box-sizing: border-box;
+}
+
+h4 {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 26px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+.content-form {
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.btn-signin {
+    width: 50%;
+}
+
