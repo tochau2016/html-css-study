@@ -7,14 +7,19 @@ import './App.css';
 import LoginForm from './Components/Form/LoginForm';
 import FooterPage from './Components/Footer/FooterPage';
 
+
+import ProductDetail from './pages/ProductDetail';
+
 function App() {
   return (
 
     <div className="App">
-      <Navbar />
-      <LoginForm />
+       <Navbar />
       {/* <FooterPage /> */}
-      <FooterPage />
+      {/* <FooterPage /> */}
+      {/* {productDetail} */}
+      <ProductDetail />
+
     </div>
 
   );

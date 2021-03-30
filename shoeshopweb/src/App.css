@@ -1,6 +1,7 @@
 @import "~antd/dist/antd.css";
 
 .menuBar {
+  position: fixed;
   padding: 2px 20px;
   border-bottom: solid 1px #e8e8e8;
   overflow: auto;
